@@ -1,0 +1,127 @@
+/*
+Primary, used for most text.
+Secondary, used for text which is lower in the visual hierarchy.
+Hint, used for text hints (such as those in text fields and labels).
+Disabled, used for text in disabled components and content.
+Icon, used for icons.
+On-surface, used for text that is on top of a surface background.
+On-secondary, used for text that is on top of a secondary background.
+On-primary, used for text that is on top of a primary background.
+*/
+
+:root {
+    --themecolor: var(--keppel);
+    --darkThemecolor: var(--midnightgreen);
+  
+    --color-h-primary: var(--color-h-primary-init);
+    --color-h-secondary: var(--color-h-secondary-init);
+    --color-h-surface: var(--color-h-surface-init);
+  
+    /* Background color */
+    --bg-background: linear-gradient(0deg, var(--bg-color), var(--bg-color-20));
+  
+    /* Responsive color */
+    --threshold: 50%;
+    --switch: calc((var(--color-l-surface) - var(--threshold)) * -100);
+    --box-shadow-color: hsla(0, 0%, var(--switch), 0.2);
+    color: hsl(0, 0%, var(--switch));
+  
+    --color-primary: hsl(
+      var(--color-h-primary),
+      var(--color-s-primary),
+      var(--color-l-primary)
+    );
+    --color-secondary: hsl(
+      var(--color-h-secondary),
+      var(--color-s-secondary),
+      var(--color-l-secondary)
+    );
+  
+    --bg-color: hsl(
+      var(--color-h-surface),
+      var(--color-s-surface),
+      var(--color-l-surface)
+    );
+    --bg-color-m10: hsl(
+      var(--color-h-surface),
+      var(--color-s-surface),
+      calc(var(--color-l-surface) - 10%)
+    );
+    --bg-color-10: hsl(
+      var(--color-h-surface),
+      var(--color-s-surface),
+      calc(var(--color-l-surface) + 10%)
+    );
+    --bg-color-20: hsl(
+      var(--color-h-surface),
+      var(--color-s-surface),
+      calc(var(--color-l-surface) + 20%)
+    );
+  }
+  
+  [theme^="theme1"] {
+    /* Palette */
+    --raisin-black: hsla(229, 12%, 17%, 1);
+    --steel-blue: hsla(208, 37%, 48%, 1);
+    --gray-web: hsla(223, 3%, 52%, 1);
+    --heliotrope-gray: hsla(287, 9%, 60%, 1);
+    --light-steel-blue: hsla(219, 32%, 78%, 1);
+  
+    --color-h-primary-init: 208;
+    --color-s-primary: 37%;
+    --color-l-primary: 48%;
+  
+    --color-h-secondary-init: 219;
+    --color-s-secondary: 32%;
+    --color-l-secondary: 78%;
+  
+    --color-h-surface-init: 229;
+    --color-s-surface: 12%;
+    --color-l-surface: 17%;
+  }
+  [theme^="theme2"] {
+    /* Palette */
+    --keppel: hsl(165, 38%, 50%);
+    --midnightgreen: hsl(188, 56%, 23%);
+    --bittersweet: hsl(0, 100%, 71%);
+    --naplesyellow: hsl(50, 100%, 71%);
+    --blanchedalmond: hsl(33, 100%, 91%);
+  
+    --color-h-primary-init: 188;
+    --color-s-primary: 56%;
+    --color-l-primary: 23%;
+  
+    --color-h-secondary-init: 165;
+    --color-s-secondary: 38%;
+    --color-l-secondary: 50%;
+  
+    --color-h-surface-init: 33;
+    --color-s-surface: 100%;
+    --color-l-surface: 91%;
+  }
+  [theme^="theme3"] {
+    /* Palette */
+    --tea-green: hsla(89, 68%, 84%, 1);
+    --tea-green-2: hsla(99, 53%, 78%, 1);
+    --eton-blue: hsla(119, 27%, 69%, 1);
+    --green-sheen: hsla(169, 28%, 59%, 1);
+    --ebony: hsla(78, 14%, 38%, 1);
+  
+    --color-h-primary-init: 99;
+    --color-s-primary: 53%;
+    --color-l-primary: 78%;
+  
+    --color-h-secondary-init: 89;
+    --color-s-secondary: 68%;
+    --color-l-secondary: 84%;
+  
+    --color-h-surface-init: 169;
+    --color-s-surface: 28%;
+    --color-l-surface: 59%;
+  }
+  
+  [theme~="invert"] {
+    --color-h-primary: calc(var(--color-h-primary-init) + 180);
+    --color-h-secondary: calc(var(--color-h-secondary-init) + 180);
+    --color-h-surface: calc(var(--color-h-surface-init) + 180);
+  }

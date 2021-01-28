@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" theme="theme1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trello Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="lanes"></div>
+      <div class="controls-container">
+        <div class="trash-container">
+          <div class="trash-drop-zone" data-drop-zone='{"showGhost":false}'>
+            <i class="far fa-trash-alt"></i>
+          </div>
+        </div>
+        <div class="input-container">
+          <input
+            type="file"
+            name="import-input"
+            accept="application/json"
+            id="import-input"
+            class="input-file"
+            hidden
+          />
+          <label for="import-input" class="btn btn-primary"
+            ><i class="fas fa-file-upload"></i>Import from JSON file...</label
+          >
+        </div>
+        <button id="export-button" class="btn btn-primary">
+          <i class="fas fa-file-download"></i>Export as JSON file...
+        </button>
+      </div>
+    </main>
+    <template id="template-lanes">
+      <div class="lane">
+        <div class="header"></div>
+        <form data-task-form>
+          <input
+            class="task-input"
+            type="text"
+            placeholder="Create new task"
+            data-task-input
+          />
+        </form>
+        <div class="tasks" data-drop-zone></div>
+      </div>
+    </template>
+  </body>
+</html>

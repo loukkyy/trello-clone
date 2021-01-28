@@ -1,0 +1,72 @@
+.btn {
+    --hue: 0;
+    --sat: 0%;
+    --initial-light: 90%;
+    --light: var(--initial-light);
+    --border-light: calc(var(--initial-light) - 20%);
+    --threshold: 60%;
+    --switch: calc((var(--light) - var(--threshold)) * -100);
+    outline: none;
+    background-color: hsl(var(--hue), var(--sat), var(--light));
+    border: 1px solid hsl(var(--hue), var(--sat), var(--border-light));
+    padding: 0.5em 1em;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0.3em;
+    font: inherit;
+    color: hsl(0, 0%, var(--switch));
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    --light: calc(var(--initial-light) + 10%);
+    box-shadow: 0 0 5px 0 hsl(var(--hue), var(--sat), var(--border-light));
+  }
+  
+  .btn.btn-primary {
+    --hue: var(--color-h-primary);
+    --sat: var(--color-s-primary);
+    --initial-light: var(--color-l-primary);
+  }
+  .btn.btn-secondary {
+    --hue: var(--color-h-secondary);
+    --sat: var(--color-s-secondary);
+    --initial-light: var(--color-l-secondary);
+  }
+  
+  .shake:hover,
+  .shake:focus {
+    animation: shake 0.1s alternate infinite ease-in-out;
+  }
+  
+  .rise:hover,
+  .rise:focus {
+    animation: rise 0.3s alternate infinite ease-in-out;
+  }
+  .jiggle:hover,
+  .jiggle:focus {
+    animation: jiggle 0.1s alternate infinite ease-in-out;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(-1px);
+    }
+    100% {
+      transform: translateX(1px);
+    }
+  }
+  @keyframes rise {
+    100% {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 50px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @keyframes jiggle {
+    0% {
+      transform: rotateZ(-1deg);
+    }
+    100% {
+      transform: rotateZ(1deg);
+    }
+  }
