@@ -61,8 +61,8 @@ On-primary, used for text that is on top of a primary background.
   
   [theme^="theme1"] {
     /* Palette */
-    --raisin-black: hsla(229, 12%, 17%, 1);
-    --steel-blue: hsla(208, 37%, 48%, 1);
+    --raisin-black: hsl(229, 13%, 17%);
+    --steel-blue: hsl(208, 37%, 48%);
     --gray-web: hsla(223, 3%, 52%, 1);
     --heliotrope-gray: hsla(287, 9%, 60%, 1);
     --light-steel-blue: hsla(219, 32%, 78%, 1);
